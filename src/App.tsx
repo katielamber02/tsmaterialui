@@ -1,12 +1,18 @@
 import React from "react";
 import "./App.css";
-import MyForm from "./MyForm";
+import { MyForm } from "./MyForm";
 
 const App: React.FC = () => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <MyForm onSubmit={() => console.log("onsubmit")} />
-    </div>
+    <header className="App-header">
+      <div style={{ textAlign: "center" }}>
+        <MyForm
+          onSubmit={({ email, firstName, lastName }) =>
+            console.log(firstName, lastName, email)
+          }
+        />
+      </div>
+    </header>
   );
 };
 
